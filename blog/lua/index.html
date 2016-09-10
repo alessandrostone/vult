@@ -19,7 +19,7 @@
 
 <div class="content">
     <h2>LuaJIT as backend for Vult</h2>
-  <p>I have been keeping an eye in LuaJIT (<a href="http://luajit.org">http://luajit.org</a>) for some time. It&rsquo;s a very interesting project and I have read very good things about it. Some time ago I made a small benchmark comparing an optimized algorithm written in C++11 against a lazy coded version in OCaml and LuaJIT. In case you are curious here are the results:</p>
+  <p>I have been keeping an eye on LuaJIT (<a href="http://luajit.org">http://luajit.org</a>) for some time. It&rsquo;s a very interesting project and I have read very good things about it. Some time ago I made a small benchmark comparing an optimized algorithm written in C++11 against a lazy coded version in OCaml and LuaJIT. In case you are curious here are the results:</p>
 
 <table>
 <thead>
@@ -62,7 +62,7 @@
 </figure>
 
 
-<p>I have to remark again: <em>The OCaml and Lua code were not written with optimization in mind</em>. My intention was to see how fast they program could go without putting to much effort coding.</p>
+<p>I have to remark again: <em>The OCaml and Lua code were not written with optimization in mind</em>. My intention was to see how fast they program could go without putting too much effort coding.</p>
 
 <p>One can see that the C++ code is much larger. On the other hand, the OCaml code is very compact. The main reason was that in OCaml I used algebraic data types which neither Lua or C++ have (<a href="https://en.wikipedia.org/wiki/Algebraic_data_type">https://en.wikipedia.org/wiki/Algebraic_data_type</a>). Therefore, all the complex data types needed to be implemented with classes or tables in the case of Lua.</p>
 

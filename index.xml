@@ -292,7 +292,7 @@ fun process(x) : real {
       <pubDate>Thu, 08 Sep 2016 22:43:03 +0300</pubDate>
       
       <guid>http://modlfo.github.io/vult/blog/lua/</guid>
-      <description>&lt;p&gt;I have been keeping an eye in LuaJIT (&lt;a href=&#34;http://luajit.org&#34;&gt;http://luajit.org&lt;/a&gt;) for some time. It&amp;rsquo;s a very interesting project and I have read very good things about it. Some time ago I made a small benchmark comparing an optimized algorithm written in C++11 against a lazy coded version in OCaml and LuaJIT. In case you are curious here are the results:&lt;/p&gt;
+      <description>&lt;p&gt;I have been keeping an eye on LuaJIT (&lt;a href=&#34;http://luajit.org&#34;&gt;http://luajit.org&lt;/a&gt;) for some time. It&amp;rsquo;s a very interesting project and I have read very good things about it. Some time ago I made a small benchmark comparing an optimized algorithm written in C++11 against a lazy coded version in OCaml and LuaJIT. In case you are curious here are the results:&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -335,7 +335,7 @@ fun process(x) : real {
 &lt;/figure&gt;
 
 
-&lt;p&gt;I have to remark again: &lt;em&gt;The OCaml and Lua code were not written with optimization in mind&lt;/em&gt;. My intention was to see how fast they program could go without putting to much effort coding.&lt;/p&gt;
+&lt;p&gt;I have to remark again: &lt;em&gt;The OCaml and Lua code were not written with optimization in mind&lt;/em&gt;. My intention was to see how fast they program could go without putting too much effort coding.&lt;/p&gt;
 
 &lt;p&gt;One can see that the C++ code is much larger. On the other hand, the OCaml code is very compact. The main reason was that in OCaml I used algebraic data types which neither Lua or C++ have (&lt;a href=&#34;https://en.wikipedia.org/wiki/Algebraic_data_type&#34;&gt;https://en.wikipedia.org/wiki/Algebraic_data_type&lt;/a&gt;). Therefore, all the complex data types needed to be implemented with classes or tables in the case of Lua.&lt;/p&gt;
 
