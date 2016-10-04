@@ -166,6 +166,81 @@ fun change(current) {
     </item>
     
     <item>
+      <title>Now Vult can be installed from npm</title>
+      <link>http://modlfo.github.io/vult/blog/vult-in-npm/</link>
+      <pubDate>Tue, 04 Oct 2016 19:22:30 +0300</pubDate>
+      
+      <guid>http://modlfo.github.io/vult/blog/vult-in-npm/</guid>
+      <description>&lt;p&gt;In the last months I have been making many improvements to the Vult compiler. These improvements cannot be easily tried by the users due to the fact that for me creating binaries for all the platforms is very time consuming. Therefore, in order for the users to try the latests changes they need to compile Vult from the source code. Even though the process is well documented in the repository, this can be time consuming and difficult for people unfamiliar with the OCaml tools.&lt;/p&gt;
+
+&lt;p&gt;I have been using &lt;code&gt;js_of_ocaml&lt;/code&gt; for quite some time to convert parts of the Vult compiler to JavaScript that runs in the live demo page &lt;a href=&#34;http://modlfo.github.io/vult/demo/&#34;&gt;http://modlfo.github.io/vult/demo/&lt;/a&gt; however the code there does not perform any I/O to disk since it&amp;rsquo;s intended to run in the web browser.&lt;/p&gt;
+
+&lt;p&gt;I tried to convert the whole application to JavaScript to see if it could run (as it is) with the latest improvements of &lt;code&gt;js_of_ocaml&lt;/code&gt;. That way I can distribute a JavaScript version that can be run with node.js. Node.js has many advantages, for example:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;runs in most platforms&lt;/li&gt;
+&lt;li&gt;easy to install&lt;/li&gt;
+&lt;li&gt;it has a good package manager&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fortunately, the only thing that did not work was the file I/O (which seems reasonable). In order to make it work I made a small hack that allowed me to switch the functions that read and write files. That way I can declare bindings for the node.js functions and replace them. Here&amp;rsquo;s the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ocaml&#34;&gt;(** Declares a &#39;buffer&#39; object *)
+class type buffer = object
+   method toString : js_string t meth
+end
+
+(** Declares a &#39;fs&#39; object *)
+class type fs = object
+   method readFileSync : js_string t -&amp;gt; buffer t meth
+   method writeFileSync : js_string t -&amp;gt; js_string t -&amp;gt; unit t meth
+end
+
+(* var fs = require(&#39;fs&#39;) *)
+let fs : fs t =
+   Unsafe.fun_call (Unsafe.js_expr &amp;quot;require&amp;quot;)
+      [|Unsafe.inject (string &amp;quot;fs&amp;quot;)|]
+
+let read_fn (path:string) : string option =
+   let buffer   = fs##readFileSync (string path) in
+   let contents = to_string (buffer##toString ()) in
+   Some(contents)
+
+let write_fn (path:string) (text:string) : bool =
+   let _ = fs##writeFileSync ((string path),(string text)) in
+   true
+;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then I replace the functions as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ocaml&#34;&gt;FileIO.setRead read_fn ;;
+FileIO.setWrite write_fn ;;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With those changes it&amp;rsquo;s possible to compile the bytecode and convert it to JavaScript. Now it&amp;rsquo;s possible to run the Vult compiler as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ node vultjs.js arguments
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thanks to the npm it is even easier to install Vult an run it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install vult -g
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command will give you an &amp;ldquo;executable&amp;rdquo; that can be called simply as &lt;code&gt;vultc&lt;/code&gt;, for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vultc -ccode infile.vult -o outfile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is the repository for the package &lt;a href=&#34;https://github.com/modlfo/vultjs&#34;&gt;https://github.com/modlfo/vultjs&lt;/a&gt; and this is the main page of the npm package &lt;a href=&#34;https://www.npmjs.com/package/vult&#34;&gt;https://www.npmjs.com/package/vult&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I will update the source code every time I think the changes in trunk are useful.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Easy DSP with Vult</title>
       <link>http://modlfo.github.io/vult/tutorials/dsp/</link>
       <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
