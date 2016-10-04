@@ -590,6 +590,15 @@ fun lowpass(x,w0,q) {
     </item>
     
     <item>
+      <title>Comment summary</title>
+      <link>http://modlfo.github.io/vult/comments/</link>
+      <pubDate>Tue, 12 Jul 2016 17:59:24 +0200</pubDate>
+      
+      <guid>http://modlfo.github.io/vult/comments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Vult Blog</title>
       <link>http://modlfo.github.io/vult/blog/</link>
       <pubDate>Tue, 12 Jul 2016 17:59:24 +0200</pubDate>
