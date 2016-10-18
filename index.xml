@@ -166,6 +166,35 @@ fun change(current) {
     </item>
     
     <item>
+      <title>Generating up-to-date binaries with CI</title>
+      <link>http://modlfo.github.io/vult/blog/ci-integration/</link>
+      <pubDate>Tue, 18 Oct 2016 22:56:13 +0300</pubDate>
+      
+      <guid>http://modlfo.github.io/vult/blog/ci-integration/</guid>
+      <description>&lt;p&gt;I have been using Travis CI for running tests and checking that Vult build correctly. Travis CI can build Vult in OSX and Linux. However, due to the status of OCaml it was difficult to setup something similar in Windows with AppVeyor. Thankfully the OCaml community has published a set of script to configure different CI services:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ocaml/ocaml-ci-scripts&#34;&gt;https://github.com/ocaml/ocaml-ci-scripts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using those scripts I could get the AppVeyor continuous integration working. Here you can take a look at the status of both services:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ci.appveyor.com/project/modlfo/vult&#34;&gt;https://ci.appveyor.com/project/modlfo/vult&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://travis-ci.org/modlfo/vult&#34;&gt;https://travis-ci.org/modlfo/vult&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once I got the things working. I started a long run of commits to get the CI services to deploy automatically every tag as a Github release. More than 30 commits later I got it working. You can see the releases here:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/modlfo/vult/releases&#34;&gt;https://github.com/modlfo/vult/releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can find there binaries for Windows, OSX and Linux.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Now Vult can be installed from npm</title>
       <link>http://modlfo.github.io/vult/blog/vult-in-npm/</link>
       <pubDate>Tue, 04 Oct 2016 19:22:30 +0300</pubDate>
