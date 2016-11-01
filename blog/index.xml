@@ -6,8 +6,26 @@
     <description>Recent content in Blogs on Vult by modlfo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Oct 2016 22:56:13 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 01 Nov 2016 22:14:59 +0200</lastBuildDate>
     <atom:link href="http://modlfo.github.io/vult/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>New repository with more PureData examples</title>
+      <link>http://modlfo.github.io/vult/blog/more-examples/</link>
+      <pubDate>Tue, 01 Nov 2016 22:14:59 +0200</pubDate>
+      
+      <guid>http://modlfo.github.io/vult/blog/more-examples/</guid>
+      <description>&lt;p&gt;A new repository with more Vult examples is available:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/modlfo/vult-examples&#34;&gt;https://github.com/modlfo/vult-examples&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This repository contains a set of standalone Vult files that can be easily compiled as PureData objects.&lt;/p&gt;
+
+&lt;p&gt;The main idea behind this objects is to create collection of &amp;ldquo;modules&amp;rdquo; that try to follow the Eurorack voltage convention: the inputs are controlled by voltages. The oscillators follow the convention of 1 volt per octave. Parameters use a range of 0-5 volts.&lt;/p&gt;
+
+&lt;p&gt;The repository also contains a few objects called &amp;ldquo;units&amp;rdquo; that are more complex modules composed with smaller objects, for example: a drum and mono synthesizer.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Generating up-to-date binaries with CI</title>
