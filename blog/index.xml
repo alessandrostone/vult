@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Vult by modlfo</title>
-    <link>http://modlfo.github.io/vult/blog/</link>
-    <description>Recent content in Blogs on Vult by modlfo</description>
+    <title>Blog-rsses on Vult by modlfo</title>
+    <link>http://modlfo.github.io/vult/blog/index.xml</link>
+    <description>Recent content in Blog-rsses on Vult by modlfo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Dec 2016 15:49:04 -0600</lastBuildDate>
