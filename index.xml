@@ -815,7 +815,7 @@ fun lowpass(x,w0,q) {
 
 &lt;h2 id=&#34;code-generation&#34;&gt;Code Generation&lt;/h2&gt;
 
-&lt;p&gt;The Vult compiler is a transcompiler which takes Vult code and produces C/C++ or JavaScript code. The C/C++ code that can be compiled in any platform with a C/C++ compiler, for example: Arduino or Teensy boards. The Javascript that can be run directly in the browser.&lt;/p&gt;
+&lt;p&gt;The Vult compiler is a transcompiler which takes Vult code and produces C/C++, JavaScript or LuaJIT code. The C/C++ code that can be compiled in any platform with a C/C++ compiler, for example: Arduino or Teensy boards. The Javascript that can be run directly in the browser.&lt;/p&gt;
 
 &lt;p&gt;In addition Vult provides templates that generate code that can be directly compiled into a Pure Data external or an object compatible with the Teensy Audio Library.&lt;/p&gt;
 
@@ -840,7 +840,7 @@ These key features enable you to write clear and simple code without sacrificing
 
 &lt;p&gt;You can see what we are working on and what&amp;rsquo;s planned for Vult in the &lt;a href=&#34;https://waffle.io/modlfo/vult&#34;&gt;https://waffle.io/modlfo/vult&lt;/a&gt; board.&lt;/p&gt;
 
-&lt;p&gt;If you want to receive notifications for future development of this project you can join to the google group Vult Group.&lt;/p&gt;
+&lt;p&gt;If you want to receive notifications for future development of this project you can join to the google group &lt;a href=&#34;http://groups.google.com/d/forum/vult&#34;&gt;Vult Group&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
 
