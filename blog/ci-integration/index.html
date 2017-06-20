@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/vult.css" media="screen">
 
 <div class="header">
-	<center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
+   <center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Francois+One|Rasa" rel="stylesheet">
@@ -19,8 +19,8 @@
 </div>
 
 <div class="content">
-    <h2>Generating up-to-date binaries with CI</h2>
-  <p>I have been using Travis CI for running tests and checking that Vult build correctly. Travis CI can build Vult in OSX and Linux. However, due to the status of OCaml it was difficult to setup something similar in Windows with AppVeyor. Thankfully the OCaml community has published a set of script to configure different CI services:</p>
+   <h2>Generating up-to-date binaries with CI</h2>
+   <p>I have been using Travis CI for running tests and checking that Vult build correctly. Travis CI can build Vult in OSX and Linux. However, due to the status of OCaml it was difficult to setup something similar in Windows with AppVeyor. Thankfully the OCaml community has published a set of script to configure different CI services:</p>
 
 <ul>
 <li><a href="https://github.com/ocaml/ocaml-ci-scripts">https://github.com/ocaml/ocaml-ci-scripts</a></li>
@@ -40,18 +40,25 @@
 </ul>
 
 <p>You can find there binaries for Windows, OSX and Linux.</p>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+   (function () {
+      
+      
+      if (window.location.hostname == "localhost")
+         return;
+
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      var disqus_shortname = 'vult-dsp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 </div>
 
-<script src="https://apis.google.com/js/plusone.js"></script>
-
-<center><div id="comments"></div></center>
-<script>
-gapi.comments.render('comments', {
-    href: window.location,
-    width: '624',
-    first_party_property: 'BLOGGER',
-    view_type: 'FILTERED_POSTMOD'
-});
-</script>
 

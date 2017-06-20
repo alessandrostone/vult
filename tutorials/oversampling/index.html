@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/vult.css" media="screen">
 
 <div class="header">
-	<center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
+   <center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Francois+One|Rasa" rel="stylesheet">
@@ -19,8 +19,8 @@
 </div>
 
 <div class="content">
-    <h2>Oversampling</h2>
-  <p>One common technique in Digital Signal Processing is Oversampling. Oversampling is often necessary when modeling filters that come from electric circuits or that present nonlinearities or that can become unstable for certain parameters.</p>
+   <h2>Oversampling</h2>
+   <p>One common technique in Digital Signal Processing is Oversampling. Oversampling is often necessary when modeling filters that come from electric circuits or that present nonlinearities or that can become unstable for certain parameters.</p>
 
 <p>In order to oversample a filter we need for every sample perform <code>N</code> steps. I a language like Vult, that hides the internal memory of a function, oversampling may seem not very obvious.</p>
 
@@ -104,18 +104,23 @@ fun lowpass(x,w0,q) {
 
 <script type="text/javascript" src="../../javascripts/external/ace/ace.js"></script>
 <script type="text/javascript" src="../../javascripts/main.js"></script>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+   (function () {
+      
+      
+      if (window.location.hostname == "localhost")
+         return;
 
-</div>
-
-<script src="https://apis.google.com/js/plusone.js"></script>
-
-<center><div id="comments"></div></center>
-<script>
-gapi.comments.render('comments', {
-    href: window.location,
-    width: '624',
-    first_party_property: 'BLOGGER',
-    view_type: 'FILTERED_POSTMOD'
-});
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      var disqus_shortname = 'vult-dsp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 

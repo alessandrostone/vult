@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/vult.css" media="screen">
 
 <div class="header">
-	<center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
+   <center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Francois+One|Rasa" rel="stylesheet">
@@ -19,8 +19,8 @@
 </div>
 
 <div class="content">
-    <h2>Automatic loading of Vult files</h2>
-  
+   <h2>Automatic loading of Vult files</h2>
+   
 
 <p>Recently I implemented simpler way to call the Vult compiler with multiple files. Previously Vult required that you passed every file in a correct order. For example:</p>
 
@@ -61,18 +61,25 @@
 <p>The actual implementation uses the <a href="http://www.geeksforgeeks.org/strongly-connected-components/">Strongly Connected Components</a> algorithm. The reason of using this instead of simple <a href="https://en.wikipedia.org/wiki/Topological_sorting">Topological sorting</a> is that the Strongly Connected Components algorithm will tell us if there are any cyclical dependencies, which is an error in Vult.</p>
 
 <p>You can find the complete implementation in OCaml in the file <a href="https://github.com/modlfo/vult/blob/master/src/util/components.ml">src/util/components.ml</a>. The actual implementation of the Kosaraju&rsquo;s algorithm is very compact, less than 40 lines of code.</p>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+   (function () {
+      
+      
+      if (window.location.hostname == "localhost")
+         return;
+
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      var disqus_shortname = 'vult-dsp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 </div>
 
-<script src="https://apis.google.com/js/plusone.js"></script>
-
-<center><div id="comments"></div></center>
-<script>
-gapi.comments.render('comments', {
-    href: window.location,
-    width: '624',
-    first_party_property: 'BLOGGER',
-    view_type: 'FILTERED_POSTMOD'
-});
-</script>
 

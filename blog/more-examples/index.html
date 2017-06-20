@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/vult.css" media="screen">
 
 <div class="header">
-	<center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
+   <center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Francois+One|Rasa" rel="stylesheet">
@@ -19,8 +19,8 @@
 </div>
 
 <div class="content">
-    <h2>New repository with more PureData examples</h2>
-  <p>A new repository with more Vult examples is available:</p>
+   <h2>New repository with more PureData examples</h2>
+   <p>A new repository with more Vult examples is available:</p>
 
 <p><a href="https://github.com/modlfo/vult-examples">https://github.com/modlfo/vult-examples</a></p>
 
@@ -29,18 +29,25 @@
 <p>The main idea behind this objects is to create collection of &ldquo;modules&rdquo; that try to follow the Eurorack voltage convention: the inputs are controlled by voltages. The oscillators follow the convention of 1 volt per octave. Parameters use a range of 0-5 volts.</p>
 
 <p>The repository also contains a few objects called &ldquo;units&rdquo; that are more complex modules composed with smaller objects, for example: a drum and mono synthesizer.</p>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+   (function () {
+      
+      
+      if (window.location.hostname == "localhost")
+         return;
+
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      var disqus_shortname = 'vult-dsp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 </div>
 
-<script src="https://apis.google.com/js/plusone.js"></script>
-
-<center><div id="comments"></div></center>
-<script>
-gapi.comments.render('comments', {
-    href: window.location,
-    width: '624',
-    first_party_property: 'BLOGGER',
-    view_type: 'FILTERED_POSTMOD'
-});
-</script>
 

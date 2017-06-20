@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/vult.css" media="screen">
 
 <div class="header">
-	<center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
+   <center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Francois+One|Rasa" rel="stylesheet">
@@ -19,22 +19,29 @@
 </div>
 
 <div class="content">
-    <h2>New site for Vult</h2>
-  <p>I have been working on giving a refresh of the Vult site. The result is what you see now. After trying a few alternatives I settle to use Hugo (<a href="https://gohugo.io">https://gohugo.io</a>). The reason I used Hugo was because I could make it do exactly what I wanted with the help of the documentation.</p>
+   <h2>New site for Vult</h2>
+   <p>I have been working on giving a refresh of the Vult site. The result is what you see now. After trying a few alternatives I settle to use Hugo (<a href="https://gohugo.io">https://gohugo.io</a>). The reason I used Hugo was because I could make it do exactly what I wanted with the help of the documentation.</p>
 
 <p>I&rsquo;m very proud that I did the theme of the site from the ground up (that&rsquo;s why is so minimalistic). I also added comments section using Google+, and I hope it works as expected.</p>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+   (function () {
+      
+      
+      if (window.location.hostname == "localhost")
+         return;
+
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      var disqus_shortname = 'vult-dsp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 </div>
 
-<script src="https://apis.google.com/js/plusone.js"></script>
-
-<center><div id="comments"></div></center>
-<script>
-gapi.comments.render('comments', {
-    href: window.location,
-    width: '624',
-    first_party_property: 'BLOGGER',
-    view_type: 'FILTERED_POSTMOD'
-});
-</script>
 

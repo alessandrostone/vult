@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/vult.css" media="screen">
 
 <div class="header">
-	<center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
+   <center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Francois+One|Rasa" rel="stylesheet">
@@ -19,8 +19,8 @@
 </div>
 
 <div class="content">
-    <h2>Generating Pure Data and Teensy Audio templates</h2>
-  <p>As part of the Vult project I have developed a new standalone library: Pla (<a href="https://modlfo.github.io/pla/">https://modlfo.github.io/pla/</a>). Pla is a templating library that is used in Vult to generate code in a simpler way. Thanks to this library I have developed two templates to simplify using Vult:</p>
+   <h2>Generating Pure Data and Teensy Audio templates</h2>
+   <p>As part of the Vult project I have developed a new standalone library: Pla (<a href="https://modlfo.github.io/pla/">https://modlfo.github.io/pla/</a>). Pla is a templating library that is used in Vult to generate code in a simpler way. Thanks to this library I have developed two templates to simplify using Vult:</p>
 
 <ul>
 <li><a href="https://github.com/modlfo/pd-vult-example">Pure Data externals</a></li>
@@ -34,18 +34,25 @@
 <p>Exporting of objects for the Teensy Audio Library is only available in fixed-point and (currently) only supports synthesis objects (I have plans to make it as flexible as the PD template).</p>
 
 <p>Here you can find an example: <a href="https://github.com/modlfo/teensy-vult-example">https://github.com/modlfo/teensy-vult-example</a></p>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+   (function () {
+      
+      
+      if (window.location.hostname == "localhost")
+         return;
+
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      var disqus_shortname = 'vult-dsp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 </div>
 
-<script src="https://apis.google.com/js/plusone.js"></script>
-
-<center><div id="comments"></div></center>
-<script>
-gapi.comments.render('comments', {
-    href: window.location,
-    width: '624',
-    first_party_property: 'BLOGGER',
-    view_type: 'FILTERED_POSTMOD'
-});
-</script>
 

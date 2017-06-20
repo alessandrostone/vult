@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/vult.css" media="screen">
 
 <div class="header">
-	<center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
+   <center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Francois+One|Rasa" rel="stylesheet">
@@ -19,8 +19,8 @@
 </div>
 
 <div class="content">
-    <h2>Easy DSP with Vult</h2>
-  <p>Functions with memory simplify writing Digital Signal Processing (DSP) code since a <code>mem</code> variable can be used to as a single sample delay <code>z^1</code>. I order to implement the Digital Biquad Filter (direct form 2) we can take the equations directly from Wikipedia: <a href="https://en.wikipedia.org/wiki/Digital_biquad_filter">https://en.wikipedia.org/wiki/Digital_biquad_filter</a>.</p>
+   <h2>Easy DSP with Vult</h2>
+   <p>Functions with memory simplify writing Digital Signal Processing (DSP) code since a <code>mem</code> variable can be used to as a single sample delay <code>z^1</code>. I order to implement the Digital Biquad Filter (direct form 2) we can take the equations directly from Wikipedia: <a href="https://en.wikipedia.org/wiki/Digital_biquad_filter">https://en.wikipedia.org/wiki/Digital_biquad_filter</a>.</p>
 
 <p>We can see the architecture and the equations here:</p>
 
@@ -132,18 +132,23 @@ fun process(x) : real {
 
 <script type="text/javascript" src="../../javascripts/external/ace/ace.js"></script>
 <script type="text/javascript" src="../../javascripts/main.js"></script>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+   (function () {
+      
+      
+      if (window.location.hostname == "localhost")
+         return;
 
-</div>
-
-<script src="https://apis.google.com/js/plusone.js"></script>
-
-<center><div id="comments"></div></center>
-<script>
-gapi.comments.render('comments', {
-    href: window.location,
-    width: '624',
-    first_party_property: 'BLOGGER',
-    view_type: 'FILTERED_POSTMOD'
-});
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      var disqus_shortname = 'vult-dsp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 

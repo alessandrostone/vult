@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/vult.css" media="screen">
 
 <div class="header">
-	<center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
+   <center><img src="../../images/VultH.png" alt="Vult" title="Vult" align="middle"></center>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Francois+One|Rasa" rel="stylesheet">
@@ -19,8 +19,8 @@
 </div>
 
 <div class="content">
-    <h2>LuaJIT as backend for Vult</h2>
-  <p>I have been keeping an eye on LuaJIT (<a href="http://luajit.org">http://luajit.org</a>) for some time. It&rsquo;s a very interesting project and I have read very good things about it. Some time ago I made a small benchmark comparing an optimized algorithm written in C++11 against a lazy coded version in OCaml and LuaJIT. In case you are curious here are the results:</p>
+   <h2>LuaJIT as backend for Vult</h2>
+   <p>I have been keeping an eye on LuaJIT (<a href="http://luajit.org">http://luajit.org</a>) for some time. It&rsquo;s a very interesting project and I have read very good things about it. Some time ago I made a small benchmark comparing an optimized algorithm written in C++11 against a lazy coded version in OCaml and LuaJIT. In case you are curious here are the results:</p>
 
 <table>
 <thead>
@@ -111,18 +111,25 @@
 <p>The results are quite promising. The code was pure Lua with exception of the arrays which are implemented using the LuaJIT FFI as <code>double[]</code>. One important thing to notice is that the LuaJIT performs all operations in <code>double</code> precision, while the C/C++ uses <code>float</code>. I&rsquo;m not sure if this has a big impact or not in modern processors.</p>
 
 <p>As follow up in this topic, I&rsquo;m planning to do more testing to see if I can generate code that is faster in LuaJIT taking advantage of the FFI features. I&rsquo;m gonna try as well to find a nice way of integrating LuaJIT + Vult into a VST or a PD external.</p>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+   (function () {
+      
+      
+      if (window.location.hostname == "localhost")
+         return;
+
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      var disqus_shortname = 'vult-dsp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 </div>
 
-<script src="https://apis.google.com/js/plusone.js"></script>
-
-<center><div id="comments"></div></center>
-<script>
-gapi.comments.render('comments', {
-    href: window.location,
-    width: '624',
-    first_party_property: 'BLOGGER',
-    view_type: 'FILTERED_POSTMOD'
-});
-</script>
 
