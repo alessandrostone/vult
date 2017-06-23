@@ -19,14 +19,14 @@
 
 &lt;p&gt;To make a wavetable synthesizer you need waveforms. One of the things I considered was to extract the waves from the PPG ROM, but in the process of trying that I found the work of &lt;a href=&#34;https://www.adventurekid.se&#34;&gt;Adventure Kid&lt;/a&gt; who has created a large database of waveforms and impulse response files &lt;a href=&#34;https://www.adventurekid.se/AKRT/&#34;&gt;AKRT&lt;/a&gt;. He provides the wavetables and IR as WAV files.&lt;/p&gt;
 
-&lt;p&gt;In order to use wavetables in Vult (as the ones provided by Adventure Kid) it&amp;rsquo;s necessary to load them in some way. Since Vult is all about the code, the easiest way is to include the wavetables in the code itself. To that purpose we have now a a new attribute &lt;code&gt;@[wave]&lt;/code&gt; that allows to specify a WAV file. The function marked with the attribute is replaced at compile-time with a function that returns the data of the file. For example:&lt;/p&gt;
+&lt;p&gt;In order to use wavetables in Vult (as the ones provided by Adventure Kid) it&amp;rsquo;s necessary to load them in some way. Since Vult is all about the code, the easiest way is to include the wavetables in the code itself. To that purpose we have now a new tag &lt;code&gt;@[wave]&lt;/code&gt; that allows to specify a WAV file. The function marked with the tag is replaced at compile-time with a function that returns the data of the file. For example:&lt;/p&gt;
 
 &lt;div class=&#34;vult_code&#34; id=&#34;snipet-1&#34;&gt;
 external mywave(channel:int, index:int) : real
    @[wave(channels=1, file=&#34;wave.wav&#34;)];
 &lt;/div&gt;
 
-&lt;p&gt;The code above declares an external function called &lt;code&gt;mywave&lt;/code&gt;. The function must take as arguments two integers: the channel and the sample index. The attribute &lt;code&gt;@[wave(channels=1, file=&amp;quot;wave.wav&amp;quot;)]&lt;/code&gt; specifies that the WAV file has one channel and that the file name is &lt;code&gt;wave.wav&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The code above declares an external function called &lt;code&gt;mywave&lt;/code&gt;. The function must take as arguments two integers: the channel and the sample index. The tag &lt;code&gt;@[wave(channels=1, file=&amp;quot;wave.wav&amp;quot;)]&lt;/code&gt; specifies that the WAV file has one channel and that the file name is &lt;code&gt;wave.wav&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;While running, the Vult compiler will look for the file &lt;code&gt;wave.wav&lt;/code&gt; in the same location of the current file or in the include directories passed with the flag &lt;code&gt;-i&lt;/code&gt;. To access the data we can call the function providing the channel we want to read and the index of the sample as follows:&lt;/p&gt;
 
@@ -40,7 +40,7 @@ fun fun() {
 
 &lt;p&gt;If we try to read a channel that does not exists the function will return zero. If we pass an index outside the range of the wav file, the mod (%) operation is used to fix the index. This will make it behave as a circular buffer.&lt;/p&gt;
 
-&lt;p&gt;The attribute also generates a new function with the name &lt;code&gt;&amp;lt;name&amp;gt;_samples()&lt;/code&gt; that returns the number of samples in the WAV file. In the case above, the function will be called &lt;code&gt;mywave_samples()&lt;/code&gt;. If another function with the same name exists we will get a compilation error.&lt;/p&gt;
+&lt;p&gt;The tag also generates a new function with the name &lt;code&gt;&amp;lt;name&amp;gt;_samples()&lt;/code&gt; that returns the number of samples in the WAV file. In the case above, the function will be called &lt;code&gt;mywave_samples()&lt;/code&gt;. If another function with the same name exists we will get a compilation error.&lt;/p&gt;
 
 &lt;p&gt;As a complete example, the following code will play back in a loop the embedded wave file.&lt;/p&gt;
 
@@ -100,7 +100,7 @@ fun play() {
 }
 &lt;/div&gt;
 
-&lt;p&gt;The annotation &lt;code&gt;@[table(size=128,min=0.0,max=127.0)]&lt;/code&gt; specifies that the function needs to be converted to a table of size &lt;code&gt;128&lt;/code&gt;, with a minimum value of &lt;code&gt;0.0&lt;/code&gt; and a maximum of &lt;code&gt;127.0&lt;/code&gt;. In this case Vult will split the range of the function into 128 segments and for each segment a second order polynomial that fits the values is calculated. All the coefficients are precalculated. The above function will be replaced by the following code (for a size 8 table):&lt;/p&gt;
+&lt;p&gt;The tag &lt;code&gt;@[table(size=128,min=0.0,max=127.0)]&lt;/code&gt; specifies that the function needs to be converted to a table of size &lt;code&gt;128&lt;/code&gt;, with a minimum value of &lt;code&gt;0.0&lt;/code&gt; and a maximum of &lt;code&gt;127.0&lt;/code&gt;. In this case Vult will split the range of the function into 128 segments and for each segment a second order polynomial that fits the values is calculated. All the coefficients are precalculated. The above function will be replaced by the following code (for a size 8 table):&lt;/p&gt;
 
 &lt;div class=&#34;vult_code&#34; id=&#34;snipet-2&#34;&gt;
 // Precalculated Coefficients
